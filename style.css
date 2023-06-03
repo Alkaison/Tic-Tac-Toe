@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Permanent Marker', 'Trebuchet MS', sans-serif;
+}
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+/* Game Title */
+.container h1 {
+    padding: 2px;
+    letter-spacing: 0.8px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+/* Container for 9 Cells */
+.cell-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    position: relative;
+    width: 225px;
+    margin: auto;
+    border-radius: 4px;
+}
+/* Each cell property */
+.cell-box {
+    width: 75px;
+    height: 75px;
+    border: 2px solid gray;
+    line-height: 75px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin: 2px;
+    font-family: cursive;
+}
+.cell-box:hover {
+    box-shadow: 1px 1px .4px gray;
+    background-color: rgba(128, 128, 128, .2);
+}
+/* Winning streak line property */
+.streakLine {
+    position: absolute;
+    width: 0%;
+    height: 5px;
+    border-radius: 6px;
+    background-color: black;
+}
+/* Aniation for StreakLine */
+.drawStreakLine {
+    width: 95%;
+    animation: streakLineDraw .5s ease-in 1;
+}
+@keyframes streakLineDraw {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 95%;
+    }
+}
+
+/* position of line as per winning condition */
+#firstRow {
+    top: 40px;
+    left: 14px;
+}
+#secondRow {
+    top: 119px;
+    left: 14px;
+}
+#thirdRow {
+    top: 198px;
+    left: 14px;
+}
+#firstColumn {
+    top: 118px;
+    left: -66px;
+    transform: rotate(90deg);
+}
+#secondCloumn {
+    top: 118px;
+    left: 12px;
+    transform: rotate(90deg);
+}
+#thirdColumn {
+    top: 118px;
+    left: 91px;
+    transform: rotate(90deg);
+}
+#leftDiagonal {
+    width: 100%;
+    top: 110px;
+    left: 0;
+    transform: rotate(45deg);
+}
+#rightDiagonal {
+    width: 100%;
+    top: 122px;
+    right: 0;
+    transform: rotate(135deg);
+}
+
+/* Players Turn */
+.status {
+    text-align: center;
+    padding: 2px;
+    margin: 12px 0;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+}
+/* restart button */
+.restart-Btn {
+    display: block;
+    margin: 6px auto;
+    align-items: center;
+    width: 50%;
+    height: 32px;
+    padding: 4px 6px;
+    border: 0;
+    border-radius: 6px;
+    color: white;
+    background-color: black;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+}
+.restart-Btn:hover {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+}
